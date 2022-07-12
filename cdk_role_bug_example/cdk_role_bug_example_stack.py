@@ -1,19 +1,19 @@
+from typing import Any
 from aws_cdk import (
-    # Duration,
     Stack,
-    # aws_sqs as sqs,
+    aws_iam as iam,
 )
 from constructs import Construct
 
 class CdkRoleBugExampleStack(Stack):
 
-    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, construct_id: str, **kwargs: Any) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # The code that defines your stack goes here
+        role: iam.IRole = iam.Role(
+            self,
+            'testRole',
+            assumed_by=iam.ServicePrincipal("batch.amazonaws.com")
+        )
 
-        # example resource
-        # queue = sqs.Queue(
-        #     self, "CdkRoleBugExampleQueue",
-        #     visibility_timeout=Duration.seconds(300),
-        # )
+        print(role)
