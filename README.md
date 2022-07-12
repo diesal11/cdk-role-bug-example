@@ -22,4 +22,4 @@ Once the virtualenv is activated, you can install the required dependencies.
 $ pip install -r requirements.txt
 ```
 
-Open the `cdk_role_bug_example/cdk_role_bug_example_stack.py` stack file and the error will report
+Run `pyright` to see the error message

@@ -1,0 +1,7 @@
+{
+    "include": [
+        "cdk_role_bug_example/**"
+    ],
+    "typeCheckingMode": "strict",
+    "python.analysis.useLibraryCodeForTypes": true
+}
