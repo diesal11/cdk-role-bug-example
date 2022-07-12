@@ -15,6 +15,8 @@ class CdkRoleBugExampleStack(Stack):
             self,
             'testRole',
             assumed_by=iam.ServicePrincipal("batch.amazonaws.com")
-        )
+        ) # type: ignore
+
+        role.grant_pass_role(grantee=iam.ServicePrincipal("batch.amazonaws.com"))
 
         print(role)
